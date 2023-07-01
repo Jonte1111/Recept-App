@@ -3,6 +3,8 @@ import './App.css';
 import { useEffect, useRef, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
+import Stack from 'react-bootstrap/Stack';
+import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 function App() {
   const [update, setUpdate] = useState(0);
@@ -28,8 +30,11 @@ function App() {
         <li>Morot</li>
       </ol>
     </div>
-    <form>
-      <input type="text" placeholder='fot'></input>      
+    <Stack direction="horizontal" gap={3}>
+      <Form.Control className="ingredientForm" placeholder="fot"/>
+      <Button variant="success">Lägg till</Button>
+      <Button variant="danger">Ta bort</Button>
+    </Stack>
       <Dropdown>
         <Dropdown.Toggle variant='success' id='dropdown-basic'>
           Enhet
@@ -39,8 +44,6 @@ function App() {
           <Dropdown.Item href="#action-2">Vikt</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
-    </form>
-    <button onClick={addIngredient}>Ny Ingrediens</button>
     </div>
 
 
